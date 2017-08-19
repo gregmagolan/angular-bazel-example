@@ -8,3 +8,10 @@ ng_module(
   deps = ["//src/hello-world"],
   tsconfig = ":tsconfig.json",
 )
+
+load("//tools/build:rollup.bzl", "rollup_bundle")
+
+rollup_bundle(
+  name = "rollup",
+  entry_point = "src/main.js"
+)

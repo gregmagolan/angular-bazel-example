@@ -12,6 +12,7 @@
         "@types/node": "^7.0.18",
         "clang-format": "^1.0.53",
         "protobufjs": "5.0.0",
+        "rollup": "^0.47.6",
         "rxjs": "^5.4.1",
         "typescript": "~2.3.4",
         "zone.js": "~0.8.13"
