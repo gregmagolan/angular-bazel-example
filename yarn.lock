@@ -58,6 +58,17 @@
     tsickle "0.25.x"
     typescript "2.5.x"
 
+"@bazel/typescript@0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@bazel/typescript/-/typescript-0.4.0.tgz#8cac2c5bb5ef452f3b9143bd104a5c60559ea2d1"
+  dependencies:
+    "@types/node" "7.0.18"
+    "@types/source-map" "^0.5.1"
+    protobufjs "5.0.0"
+    tsickle "0.25.x"
+    tsutils "2.12.1"
+    typescript "2.5.x"
+
 "@types/node@6.0.84":
   version "6.0.84"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.84.tgz#193ffe5a9f42864d425ffd9739d95b753c6a1eab"
@@ -1042,6 +1053,12 @@ tsickle@0.25.x, tsickle@^0.25.5:
 tslib@^1.7.1:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.0.tgz#dc604ebad64bcbf696d613da6c954aa0e7ea1eb6"
+
+tsutils@2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.12.1.tgz#f4d95ce3391c8971e46e54c4cf0edb0a21dd5b24"
+  dependencies:
+    tslib "^1.7.1"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"
