@@ -1,7 +1,7 @@
 git_repository(
     name = "build_bazel_rules_nodejs",
     remote = "https://github.com/bazelbuild/rules_nodejs.git",
-    tag = "0.1.8",
+    tag = "0.2.3",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
@@ -20,7 +20,7 @@ local_repository(
 git_repository(
     name = "io_bazel_rules_sass",
     remote = "https://github.com/bazelbuild/rules_sass.git",
-    tag = "0.0.2",
+    tag = "0.0.3",
 )
 
 load("@io_bazel_rules_sass//sass:sass.bzl", "sass_repositories")
