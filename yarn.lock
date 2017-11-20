@@ -8,12 +8,12 @@
   dependencies:
     tslib "^1.7.1"
 
-"@angular/bazel@5.1.0-beta.1":
-  version "5.1.0-beta.1"
-  resolved "https://registry.yarnpkg.com/@angular/bazel/-/bazel-5.1.0-beta.1.tgz#a812176f17864522a058a3bfeb990e66da3833d2"
+"@angular/bazel@git+https://github.com/gregmagolan/bazel-builds.git#devserver-1":
+  version "5.1.0-beta.1-69c53c3"
+  resolved "git+https://github.com/gregmagolan/bazel-builds.git#8a8a0a8b5657c8e55aa20241b1ecb397606b0a44"
   dependencies:
-    "@bazel/typescript" "0.3.x"
-    "@types/node" "6.0.84"
+    "@bazel/typescript" "git+https://github.com/gregmagolan/rules_typescript.git#devserver-4"
+    "@types/node" "8.0.53"
 
 "@angular/common@5.1.0-beta.1":
   version "5.1.0-beta.1"
@@ -48,33 +48,24 @@
   dependencies:
     tslib "^1.7.1"
 
-"@bazel/typescript@0.3.x":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@bazel/typescript/-/typescript-0.3.1.tgz#54367df8f30fa0fb25e41106eb7aa558534c36dd"
-  dependencies:
-    "@types/node" "7.0.18"
-    "@types/source-map" "^0.5.1"
-    protobufjs "5.0.0"
-    tsickle "0.25.x"
-    typescript "2.5.x"
-
-"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-3":
+"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-4":
   version "0.3.0"
-  resolved "git+https://github.com/gregmagolan/rules_typescript.git#62348c8affdba8274bc0827cfe0c251245270f47"
+  resolved "git+https://github.com/gregmagolan/rules_typescript.git#42deb3b6512956b72b9db9db2a95d5062076d2a8"
   dependencies:
     "@types/node" "7.0.18"
     "@types/source-map" "^0.5.1"
     protobufjs "5.0.0"
     tsickle "0.25.x"
+    tsutils "2.12.1"
     typescript "2.5.x"
-
-"@types/node@6.0.84":
-  version "6.0.84"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.84.tgz#193ffe5a9f42864d425ffd9739d95b753c6a1eab"
 
 "@types/node@7.0.18":
   version "7.0.18"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-7.0.18.tgz#cd67f27d3dc0cfb746f0bdd5e086c4c5d55be173"
+
+"@types/node@8.0.53":
+  version "8.0.53"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.53.tgz#396b35af826fa66aad472c8cb7b8d5e277f4e6d8"
 
 "@types/source-map@^0.5.1":
   version "0.5.2"
@@ -1056,6 +1047,12 @@ tsickle@0.25.x, tsickle@^0.25.5:
 tslib@^1.7.1:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.8.0.tgz#dc604ebad64bcbf696d613da6c954aa0e7ea1eb6"
+
+tsutils@2.12.1:
+  version "2.12.1"
+  resolved "https://registry.yarnpkg.com/tsutils/-/tsutils-2.12.1.tgz#f4d95ce3391c8971e46e54c4cf0edb0a21dd5b24"
+  dependencies:
+    tslib "^1.7.1"
 
 tunnel-agent@^0.6.0:
   version "0.6.0"

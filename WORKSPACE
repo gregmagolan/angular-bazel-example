@@ -1,7 +1,7 @@
 git_repository(
     name = "build_bazel_rules_nodejs",
     remote = "https://github.com/gregmagolan/rules_nodejs.git",
-    tag = "devserver-3",
+    tag = "devserver-4",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
