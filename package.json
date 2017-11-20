@@ -8,6 +8,7 @@
         "@angular/common": "5.1.0-beta.1",
         "@angular/core": "5.1.0-beta.1",
         "@angular/platform-browser": "5.1.0-beta.1",
+        "requirejs": "2.3.x",
         "rxjs": "5.5.x",
         "zone.js": "0.8.x"
     },
@@ -15,6 +16,7 @@
         "@angular/bazel": "5.1.0-beta.1",
         "@angular/compiler": "5.1.0-beta.1",
         "@angular/compiler-cli": "5.1.0-beta.1",
+        "@bazel/typescript": "git+https://github.com/gregmagolan/rules_typescript.git#devserver-3",
         "typescript": "2.5.x"
     },
     "scripts": {

@@ -58,6 +58,16 @@
     tsickle "0.25.x"
     typescript "2.5.x"
 
+"@bazel/typescript@git+https://github.com/gregmagolan/rules_typescript.git#devserver-3":
+  version "0.3.0"
+  resolved "git+https://github.com/gregmagolan/rules_typescript.git#62348c8affdba8274bc0827cfe0c251245270f47"
+  dependencies:
+    "@types/node" "7.0.18"
+    "@types/source-map" "^0.5.1"
+    protobufjs "5.0.0"
+    tsickle "0.25.x"
+    typescript "2.5.x"
+
 "@types/node@6.0.84":
   version "6.0.84"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-6.0.84.tgz#193ffe5a9f42864d425ffd9739d95b753c6a1eab"
@@ -908,6 +918,10 @@ request@2.81.0:
     tough-cookie "~2.3.0"
     tunnel-agent "^0.6.0"
     uuid "^3.0.0"
+
+requirejs@2.3.x:
+  version "2.3.5"
+  resolved "https://registry.yarnpkg.com/requirejs/-/requirejs-2.3.5.tgz#617b9acbbcb336540ef4914d790323a8d4b861b0"
 
 rimraf@2, rimraf@^2.5.1, rimraf@^2.6.1:
   version "2.6.2"
