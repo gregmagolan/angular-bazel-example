@@ -787,7 +787,7 @@ husky@0.14.3:
 
 "ibazel-benchmark-runner@git+https://github.com/gregmagolan/ibazel-benchmark-runner":
   version "0.0.1"
-  resolved "git+https://github.com/gregmagolan/ibazel-benchmark-runner#4c50502246848a56f58710e51517d45092225438"
+  resolved "git+https://github.com/gregmagolan/ibazel-benchmark-runner#2f24b58613e3840fb2c4d95991dd2140e0763596"
   dependencies:
     "@bazel/ibazel" "git+https://github.com/gregmagolan/bazel-watcher#dist-0.3.0-config-2"
     nomnom "^1.8.1"
