@@ -39,6 +39,14 @@ one to understand and see the effect). As soon as you save a change, the app
 should refresh in the browser with the new content. Our intent is that this time
 is less than two seconds, even for a large application.
 
+## Production bundling with Rollup
+
+```
+bazel build //src:bundle
+```
+
+Test the bundled rollup application by running `bazel run //src:lite-server`
+
 ## Coming soon
 
 Production bundling with https://github.com/bazelbuild/rules_closure/ is
