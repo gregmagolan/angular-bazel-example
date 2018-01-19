@@ -26,14 +26,16 @@
         "typescript": "2.6.2"
     },
     "scripts": {
-        "prebuildifier": "bazel build @com_github_bazelbuild_buildtools//buildifier",
-        "buildifier": "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"./node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/buildifier",
-        "format": "git-clang-format",
-        "precommit": "check-clang-format \"yarn format\"",
         "postinstall": "concurrently \"webdriver-manager update\" \"ngc -p angular.tsconfig.json\"",
-        "pretest": "bazel build test/...",
-        "test": "concurrently \"bazel run //src:devserver\" protractor --kill-others --success first",
-        "rollup": "bazel build //src:bundle",
-        "lite-server": "bazel run //src:lite-server"
+
+        "serve": "ibazel run //src:devserver",
+        "pree2e": "bazel build test/...",
+        "e2e": "concurrently \"bazel run //src:prodserver\" protractor --kill-others --success first",
+
+        "prebuildifier": "bazel build @com_github_bazelbuild_buildtools//buildifier",
+        "buildifier": "note: working around https://github.com/alexeagle/angular-bazel-example/issues/60",
+        "buildifier": "find . -type f \\( -name BUILD -or -name BUILD.bazel \\) ! -path \"./node_modules/*\" | xargs $(bazel info bazel-bin)/external/com_github_bazelbuild_buildtools/buildifier/*/buildifier",
+        "format": "git-clang-format",
+        "precommit": "check-clang-format \"yarn format\""
     }
 }

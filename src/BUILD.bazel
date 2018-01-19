@@ -41,7 +41,7 @@ rollup_bundle(
 )
 
 nodejs_binary(
-    name = "lite-server",
+    name = "prodserver",
     args = ["--baseDir=\"src\""],
     data = [
         "index.html",
