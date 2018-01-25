@@ -60,14 +60,14 @@ jobs:
       # Install the dependencies from NPM
       - run: bazel run --config=ci @yarn//:yarn install
 
-      # Run the benchmark
-      - run: node_modules/.bin/ibazel-benchmark-runner //src:devserver src/hello-world/hello-world.component.ts --config=ci --url=http://localhost:5432
-
       # Build and Test
       # Use bazel query so that we explicitly ask for all buildable targets to
       # be built even though we run `bazel test`
       # See https://github.com/bazelbuild/bazel/issues/4257
       - run: bazel query //... | xargs bazel test --config=ci
+
+      # Run the benchmark
+      - run: node_modules/.bin/ibazel-benchmark-runner //src:devserver src/hello-world/hello-world.component.ts --config=ci --url=http://localhost:5432
 
       # Run the protractor end-to-end test - it's not a Bazel target because
       # we didn't write a protractor rule yet.
