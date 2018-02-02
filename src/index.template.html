@@ -1,0 +1,23 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Angular Bazel Example</title>
+    <base href="/">
+  </head>
+  <body>
+    <!-- The Angular application will be bootstrapped into this element. -->
+    <app-component></app-component>
+
+    <!--
+      We load zone.js outside the bundle. That's because it's a "prollyfill"
+      which speculates that such features might be available in a browser.
+      Also it's tricky to configure dead code elimination to understand that
+      zone.js is used, given that we don't have any import statement that
+      imports from it.
+    -->
+    <script src="/zone.min.js"></script>
+
+    TEMPLATED_rollup_scripts
+  </body>
+</html>

@@ -1,16 +1,26 @@
 
-import {NgModule, Component} from '@angular/core';
+import {Component, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-import { HelloWorldModule } from './hello-world/hello-world.module';
+import {RouterModule, Routes} from '@angular/router';
 
-@Component({
-  selector: 'app-component',
-  template: '<hello-world-app></hello-world-app>'
-})
+import {HelloWorldComponent} from './hello-world/hello-world.component';
+import {HelloWorldModule} from './hello-world/hello-world.module';
+
+export const appRoutes: Routes = [
+  {
+    path: '',
+    children: [
+      {path: '', pathMatch: 'full', component: HelloWorldComponent},
+      {path: 'foo', pathMatch: 'full', loadChildren: './foo/foo.module#FooModule'},
+    ]
+  },
+];
+
+@Component({selector: 'app-component', template: '<router-outlet></router-outlet>'})
 export class BootstrapComponent {}
 
 @NgModule({
-  imports: [BrowserModule, HelloWorldModule],
+  imports: [BrowserModule, HelloWorldModule, RouterModule.forRoot(appRoutes)],
   declarations: [BootstrapComponent],
   bootstrap: [BootstrapComponent],
 })

@@ -2,8 +2,8 @@ workspace(name = "angular_bazel_example")
 
 git_repository(
     name = "build_bazel_rules_nodejs",
-    remote = "https://github.com/bazelbuild/rules_nodejs.git",
-    tag = "0.4.0",
+    remote = "https://github.com/gregmagolan/rules_nodejs.git",
+    commit = "9f47f5bee84db868cb9a223bfef6bef7f5daffcc",
 )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")

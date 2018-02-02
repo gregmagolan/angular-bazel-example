@@ -6,47 +6,56 @@ ng_module(
     name = "src",
     srcs = glob(["*.ts"]),
     tsconfig = ":tsconfig.json",
-    deps = ["//src/hello-world"],
+    deps = [
+        "//src/foo",
+        "//src/hello-world",
+    ],
 )
 
 # Needed because the devserver only loads static files that appear under this
 # package.
 genrule(
-    name = "zone.js",
+    name = "zonejs",
     srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
     outs = ["zone.min.js"],
     cmd = "cp $< $@",
 )
 
-load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
-
-ts_devserver(
-    name = "devserver",
-    entry_module = "angular_bazel_example/src/main",
-    scripts = ["//:angular_bundles"],
-    serving_path = "/bundle.min.js",
-    static_files = [
-        ":zone.js",
-        "index.html",
-    ],
-    deps = ["//src"],
-)
+# ts_devserver doesn't support code splitting and lazy loading presently.
+# support for this coming in the future.
+#
+# load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
+#
+# ts_devserver(
+#     name = "devserver",
+#     entry_module = "angular_bazel_example/src/main",
+#     scripts = ["//:angular_bundles"],
+#     serving_path = "/bundle.min.js",
+#     static_files = [
+#         ":zonejs",
+#         "index.html",
+#     ],
+#     deps = ["//src"],
+# )
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "rollup_bundle", "nodejs_binary")
 
 rollup_bundle(
     name = "bundle",
-    entry_point = "src/main",
+    index_html_template = "index.template.html",
+    entry_points = [
+        "src/main",
+        "src/foo/foo.module.ngfactory",
+    ],
     deps = ["//src"],
 )
 
 nodejs_binary(
     name = "prodserver",
-    args = ["./src"],
+    args = ["src"],
     data = [
-        "index.html",
         ":bundle",
-        ":zone.js",
+        ":zonejs",
     ],
-    entry_point = "http-server/bin/http-server",
+    entry_point = "history-server/modules/cli.js",
 )
