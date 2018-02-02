@@ -19,12 +19,13 @@ filegroup(
         "tsutils",
         "typescript",
         "@types",
+        "systemjs",
     ] for ext in [
         "*.js",
         "*.json",
         "*.d.ts",
     ]] + [
-        "node_modules/http-server/**",
+        "node_modules/history-server/**",
     ]),
 )
 

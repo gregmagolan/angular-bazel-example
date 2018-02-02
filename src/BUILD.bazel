@@ -6,15 +6,25 @@ ng_module(
     name = "src",
     srcs = glob(["*.ts"]),
     tsconfig = ":tsconfig.json",
-    deps = ["//src/hello-world"],
+    deps = [
+        "//src/foo",
+        "//src/hello-world",
+    ],
 )
 
 # Needed because the devserver only loads static files that appear under this
 # package.
 genrule(
-    name = "zone.js",
+    name = "zonejs",
     srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
     outs = ["zone.min.js"],
+    cmd = "cp $< $@",
+)
+
+genrule(
+    name = "systemjs",
+    srcs = ["//:node_modules/systemjs/dist/system.js"],
+    outs = ["system.js"],
     cmd = "cp $< $@",
 )
 
@@ -26,7 +36,8 @@ ts_devserver(
     scripts = ["//:angular_bundles"],
     serving_path = "/bundle.min.js",
     static_files = [
-        ":zone.js",
+        ":zonejs",
+        ":systemjs",
         "index.html",
     ],
     deps = ["//src"],
@@ -36,17 +47,21 @@ load("@build_bazel_rules_nodejs//:defs.bzl", "rollup_bundle", "nodejs_binary")
 
 rollup_bundle(
     name = "bundle",
-    entry_point = "src/main",
+    entry_points = [
+        "src/main",
+        "src/foo/foo.module.ngfactory",
+    ],
     deps = ["//src"],
 )
 
 nodejs_binary(
     name = "prodserver",
-    args = ["./src"],
+    args = ["src"],
     data = [
         "index.html",
         ":bundle",
-        ":zone.js",
+        ":systemjs",
+        ":zonejs",
     ],
-    entry_point = "http-server/bin/http-server",
+    entry_point = "history-server/history-server.js",
 )
