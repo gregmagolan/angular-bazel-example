@@ -19,7 +19,6 @@ filegroup(
         "tsutils",
         "typescript",
         "@types",
-        "systemjs",
     ] for ext in [
         "*.js",
         "*.json",
