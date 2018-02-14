@@ -26,16 +26,11 @@
           packages: {
             '' : {
               map: {
-                './main': 'bundles/main.js'
+                './main': 'bundles/main',
+                './foo/foo.module.ngfactory': 'bundles/foo.module.ngfactory',
               },
               defaultExtension: 'js'
             },
-            'foo' : {
-              map: {
-                './foo.module.ngfactory': 'bundles/foo.module.ngfactory.js',
-              },
-              defaultExtension: 'js'
-            }
           }
         });
       })(this);
