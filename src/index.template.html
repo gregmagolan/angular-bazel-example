@@ -18,27 +18,6 @@
     -->
     <script src="/zone.min.js"></script>
 
-    <script src="/system.js"></script>
-
-    <script>
-      (function (global) {
-        System.config({
-          packages: {
-            '' : {
-              map: {
-                './main': 'bundles/main',
-                './foo/foo.module.ngfactory': 'bundles/foo.module.ngfactory',
-              },
-              defaultExtension: 'js'
-            },
-          }
-        });
-      })(this);
-    </script>
-
-    <script>
-      System.import('main').catch(function(err){ console.error(err); });
-    </script>
-
+    TEMPLATED_rollup_scripts
   </body>
 </html>
