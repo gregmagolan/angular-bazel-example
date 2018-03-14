@@ -6,7 +6,10 @@ ng_module(
     name = "src",
     srcs = glob(["*.ts"]),
     tsconfig = ":tsconfig.json",
-    deps = ["//src/public-api"],
+    deps = [
+      "//src/public-api",
+      "//src/public-api/hello-world",
+    ],
 )
 
 # Needed because the devserver only loads static files that appear under this
