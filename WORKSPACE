@@ -72,7 +72,7 @@ go_register_toolchains()
 # Tell Bazel about some workspaces that were installed from npm.
 local_repository(
     name = "angular",
-    path = "bazel-builds",
+    path = "node_modules/@angular/bazel",
 )
 
 local_repository(
