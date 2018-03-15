@@ -23,6 +23,7 @@ ng_module(
     tsconfig = "//src:tsconfig.json",
     deps = [
         "//src/lib",
+        "//src/shared",
         "@rxjs",
     ],
 )
