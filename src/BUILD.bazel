@@ -9,15 +9,6 @@ ng_module(
     deps = ["//src/hello-world"],
 )
 
-# Needed because the devserver only loads static files that appear under this
-# package.
-genrule(
-    name = "zone.js",
-    srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
-    outs = ["zone.min.js"],
-    cmd = "cp $< $@",
-)
-
 load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
 
 ts_devserver(
@@ -26,8 +17,11 @@ ts_devserver(
     scripts = ["//:angular_bundles"],
     serving_path = "/bundle.min.js",
     static_files = [
-        ":zone.js",
+        "//:node_modules/zone.js/dist/zone.min.js",
         "index.html",
+    ],
+    additional_root_paths = [
+      "angular_bazel_example/node_modules/zone.js/dist",
     ],
     deps = ["//src"],
 )
@@ -38,6 +32,15 @@ rollup_bundle(
     name = "bundle",
     entry_point = "src/main",
     deps = ["//src"],
+)
+
+# Needed because the prodserver only loads static files that appear under this
+# package.
+genrule(
+    name = "zone.js",
+    srcs = ["//:node_modules/zone.js/dist/zone.min.js"],
+    outs = ["zone.min.js"],
+    cmd = "cp $< $@",
 )
 
 nodejs_binary(
