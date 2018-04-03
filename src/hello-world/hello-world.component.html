@@ -1,0 +1,7 @@
+<div><a routerLink="/todos">Todos</a></div>
+
+<h1>Home</h1>
+
+<div>Hello {{ name }}</div>
+
+<input type="text" [value]="name" (input)="name = $event.target.value"/>
