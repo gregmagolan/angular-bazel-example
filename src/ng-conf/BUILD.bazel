@@ -1,0 +1,13 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@angular//:index.bzl", "ng_module")
+
+ng_module(
+    name = "ng-conf",
+    srcs = [
+        "ng-conf.pipe.ts",
+        "ng-conf.module.ts",
+    ],
+    tsconfig = "//src:tsconfig.json",
+    deps = ["@rxjs"],
+)
