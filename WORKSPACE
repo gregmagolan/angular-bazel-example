@@ -30,6 +30,9 @@ http_archive(
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories")
 
+# This rule installs nodejs, npm, and yarn, but does NOT install
+# your npm dependencies into your node_modules folder.
+# You must still run the package manager to do this.
 node_repositories(package_json = ["//:package.json"])
 
 
