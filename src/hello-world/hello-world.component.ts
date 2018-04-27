@@ -5,7 +5,7 @@ import {msg} from '../lib/file';
   selector: 'hello-world-app',
   template: `
     <div>Hello {{ name }}</div>
-    <input type="text" [value]="name" (input)="name = $event.target.value"/>
+    <input type="text" [(ngModel)]="name"/>
   `,
   styleUrls: ['./hello-world-styles.css']
 })

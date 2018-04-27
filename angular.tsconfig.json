@@ -2,6 +2,10 @@
 // This file is required to run ngc on angular libraries, to write files like
 // node_modules/@angular/core/core.ngsummary.json
 {
+    // Uncomment to generate xxx.ngsummary.js files in Angular packages
+    // "angularCompilerOptions": {
+    //     "enableSummariesForJit": true
+    // },
     "compilerOptions": {
         "lib": [
             "dom",

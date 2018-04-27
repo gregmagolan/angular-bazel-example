@@ -39,6 +39,8 @@ ANGULAR_TESTING = [
     # visible only in tests
     "node_modules/@angular/compiler/bundles/*.umd.js",
     "node_modules/@angular/platform-browser-dynamic/bundles/*.umd.js",
+    # Uncomment to include forms ngsummary file in ts_web_test
+    # "node_modules/@angular/forms/forms.ngsummary.js",
 ]
 
 # TODO(alexeagle): it's messy for users to need to specify the following
