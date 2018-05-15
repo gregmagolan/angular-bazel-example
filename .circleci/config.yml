@@ -53,6 +53,8 @@ jobs:
       - restore_cache:
           key: *cache_key
 
+      - run: sudo cp .circleci/bazel.rc /etc/bazel.bazelrc
+
       # Helpful for debugging, so you can check you have the same bazel version when you need
       # to reproduce a failure.
       - run: bazel info release
