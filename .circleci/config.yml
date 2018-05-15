@@ -58,7 +58,7 @@ jobs:
       - run: bazel info release
 
       # Install the dependencies from NPM
-      - run: bazel run --config=ci @yarn//:yarn install
+      - run: bazel run --config=ci @nodejs//:yarn install
 
       # Build and Test
       # Use bazel query so that we explicitly ask for all buildable targets to
