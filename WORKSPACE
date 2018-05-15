@@ -51,6 +51,22 @@ http_archive(
     sha256 = "f70c35a8c779bb92f7521ecb5a1c6604e9c3edd431e50b6376d7497abc8ad3c1",
 )
 
+# Webtesting rules depend on io_bazel
+# Bazel doesn't support transitive WORKSPACE deps, so we must repeat them here.
+http_archive(
+    name = "io_bazel",
+    url = "https://github.com/bazelbuild/bazel/releases/download/0.9.0/bazel-0.9.0-dist.zip",
+    sha256 = "efb28fed4ffcfaee653e0657f6500fc4cbac61e32104f4208da385676e76312a",
+)
+
+# Webtesting rules depend on bazel_gazelle
+# Bazel doesn't support transitive WORKSPACE deps, so we must repeat them here.
+http_archive(
+    name = "bazel_gazelle",
+    url = "https://github.com/bazelbuild/bazel-gazelle/releases/download/0.10.1/bazel-gazelle-0.10.1.tar.gz",
+    sha256 = "d03625db67e9fb0905bbd206fa97e32ae9da894fe234a493e7517fd25faec914",
+)
+
 # Fetch the Sass rules
 git_repository(
     name = "io_bazel_rules_sass",
@@ -64,6 +80,10 @@ git_repository(
 load("@build_bazel_rules_nodejs//:defs.bzl", "check_bazel_version", "node_repositories")
 
 node_repositories(package_json = ["//:package.json"])
+
+load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
+
+gazelle_dependencies()
 
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
 
