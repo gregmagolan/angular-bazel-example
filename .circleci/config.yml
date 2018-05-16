@@ -73,7 +73,7 @@ jobs:
 
       # Run the protractor end-to-end test - it's not a Bazel target because
       # we didn't write a protractor rule yet.
-      - run: xvfb-run -a yarn e2e
+      - run: yarn e2e
       
       - store_artifacts:
           path: dist/bin/src/bundle.min.js
