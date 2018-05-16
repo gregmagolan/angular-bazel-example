@@ -79,7 +79,10 @@ git_repository(
 
 load("@build_bazel_rules_nodejs//:defs.bzl", "check_bazel_version", "node_repositories")
 
-node_repositories(package_json = ["//:package.json"])
+node_repositories(
+  package_json = ["//:package.json"],
+  preserve_symlinks = True,
+)
 
 load("@bazel_gazelle//:deps.bzl", "gazelle_dependencies")
 
