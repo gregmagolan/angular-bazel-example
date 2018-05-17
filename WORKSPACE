@@ -22,9 +22,9 @@ http_archive(
 # Fetch the NodeJS rules
 http_archive(
     name = "build_bazel_rules_nodejs",
-    url = "https://github.com/bazelbuild/rules_nodejs/archive/0.9.0.zip",
-    strip_prefix = "rules_nodejs-0.9.0",
-    sha256 = "687ffc3165402f445797062dfbe85a3bf3632dba109fc0ff8694999688d96852",
+    url = "https://github.com/bazelbuild/rules_nodejs/archive/d334fd8e2274fb939cf447106dced97472534e80.zip",
+    strip_prefix = "rules_nodejs-d334fd8e2274fb939cf447106dced97472534e80",
+    sha256 = "2e17a53e4dab574908425dbe83bc02493ead411e1f09eff12bb53c9313c1d406",
 )
 
 # Fetch the webtesting rules
