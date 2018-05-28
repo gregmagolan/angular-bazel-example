@@ -45,7 +45,7 @@ genrule(
 
 nodejs_binary(
     name = "prodserver",
-    args = ["./src"],
+    args = ["./src", "-p", "5432"],
     data = [
         "index.html",
         ":bundle",
