@@ -36,11 +36,12 @@ http_archive(
 )
 
 # Fetch the TypeScript rules
+# TODO(gmagolan): update to 0.14.1 once released and tagged
 http_archive(
     name = "build_bazel_rules_typescript",
-    url = "https://github.com/bazelbuild/rules_typescript/archive/0.14.0.zip",
-    strip_prefix = "rules_typescript-0.14.0",
-    sha256 = "90aa6e1996a14cedfbe64445d5dcf8bbaeec8292cbb177bc9002e77543bc731f",
+    url = "https://github.com/gregmagolan/rules_typescript/archive/80f1a9f60e61213c54a5798ffacc2541ecbef82f.zip",
+    strip_prefix = "rules_typescript-80f1a9f60e61213c54a5798ffacc2541ecbef82f",
+    sha256 = "531732da9ad5e82ff3e9b0aa83488694574fc793f12856a8c011981ec7583eec",
 )
 
 # Some of the TypeScript is written in Go.
@@ -68,10 +69,11 @@ http_archive(
 )
 
 # Fetch the Sass rules
-git_repository(
+http_archive(
     name = "io_bazel_rules_sass",
-    remote = "https://github.com/bazelbuild/rules_sass.git",
-    tag = "0.0.3",
+    url = "https://github.com/bazelbuild/rules_sass/archive/0.0.3.zip",
+    strip_prefix = "rules_sass-0.0.3",
+    sha256 = "8fa98e7b48a5837c286a1ea254b5a5c592fced819ee9fe4fdd759768d97be868",
 )
 
 ####################################
