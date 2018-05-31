@@ -36,12 +36,11 @@ http_archive(
 )
 
 # Fetch the TypeScript rules
-# TODO(gmagolan): update to 0.14.1 once released and tagged
 http_archive(
     name = "build_bazel_rules_typescript",
-    url = "https://github.com/gregmagolan/rules_typescript/archive/80f1a9f60e61213c54a5798ffacc2541ecbef82f.zip",
-    strip_prefix = "rules_typescript-80f1a9f60e61213c54a5798ffacc2541ecbef82f",
-    sha256 = "531732da9ad5e82ff3e9b0aa83488694574fc793f12856a8c011981ec7583eec",
+    url = "https://github.com/bazelbuild/rules_typescript/archive/0.15.0.zip",
+    strip_prefix = "rules_typescript-0.15.0",
+    sha256 = "1aa75917330b820cb239b3c10a936a10f0a46fe215063d4492dd76dc6e1616f4",
 )
 
 # Some of the TypeScript is written in Go.
