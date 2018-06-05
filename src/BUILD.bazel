@@ -20,8 +20,8 @@ load("@build_bazel_rules_typescript//:defs.bzl", "ts_devserver")
 ts_devserver(
     name = "devserver",
     additional_root_paths = [
-      "angular_bazel_example/node_modules/zone.js/dist",
-      "angular_bazel_example/node_modules/@ngrx/store/bundles",
+        "angular_bazel_example/node_modules/zone.js/dist",
+        "angular_bazel_example/node_modules/@ngrx/store/bundles",
     ],
     entry_module = "angular_bazel_example/src/main",
     scripts = [
