@@ -24,6 +24,9 @@ ng_module(
     deps = [
         "//src/lib",
         "//src/reducers",
+        "@angular//packages/common",
+        "@angular//packages/core",
+        "@angular//packages/forms",
         "@rxjs",
     ],
 )

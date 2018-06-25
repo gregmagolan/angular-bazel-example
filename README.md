@@ -89,13 +89,6 @@ bundlers can be integrated with Bazel.
 $ ibazel run src:prodserver
 ```
 
-We also use Protractor to run end-to-end tests. We don't have a protractor rule
-yet, so we'll take the build results from Bazel and run the test outside of Bazel.
-
-```bash
-$ yarn e2e
-```
-
 ## Coming soon
 
 - Protractor bazel rule
