@@ -38,13 +38,22 @@ npm install -g @bazel/ibazel
 ## Setup
 
 Before building the app, we install packages, just as with any npm-based development workflow.
-However, to get the same version of the toolchain as co-workers and our continuous integration, let's have Bazel run the
-package manager using a pinned version it manages. You should not even need
-node, npm, or yarn installed on a machine where you develop with Bazel.
 
 ```bash
-$ bazel run :install
+$ yarn install
 ```
+
+or 
+
+```bash
+$ npm install
+```
+
+For the time being, you need to run your locally installed `yarn` or `npm` to install dependencies
+as shown above. This is because we pull down the `@bazel/typescript` bazel dependency from npm and
+that dependency needs to be in place before we can build the project. We're investigating
+how to resolve this bootstrapping issue so in the future you will be able run `bazel run :install` to
+install your npm packages without needing a local installation of `node`, `yarn` or `npm`.
 
 ## Development
 

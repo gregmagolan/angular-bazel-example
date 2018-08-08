@@ -45,5 +45,5 @@ filegroup(
         "*.d.ts",
     ]] + [
         "node_modules/protractor/**",
-    ]),
+    ]) + ["@build_bazel_rules_typescript//:node_modules"],
 )

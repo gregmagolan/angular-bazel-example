@@ -41,11 +41,17 @@ http_archive(
 )
 
 # Runs the TypeScript compiler
-http_archive(
+local_repository(
     name = "build_bazel_rules_typescript",
-    url = "https://github.com/bazelbuild/rules_typescript/archive/e4fa423cec302acbf6fac9adb3f4453283c3f4ea.zip",
-    strip_prefix = "rules_typescript-e4fa423cec302acbf6fac9adb3f4453283c3f4ea",
-    sha256 = "7602e0e989a20ff2c5c9ffae7b7b347349646a71e4bc53b7beabb0c565be5d39",
+    path = "node_modules/@bazel/typescript",
+)
+
+# build_bazel_rules_typescript depends on io_bazel_skydoc
+http_archive(
+    name = "io_bazel_skydoc",
+    urls = ["https://github.com/bazelbuild/skydoc/archive/0ef7695c9d70084946a3e99b89ad5a99ede79580.zip"],
+    strip_prefix = "skydoc-0ef7695c9d70084946a3e99b89ad5a99ede79580",
+    sha256 = "491f9e142b870b18a0ec8eb3d66636eeceabe5f0c73025706c86f91a1a2acb4d",
 )
 
 # Used by the ts_web_test_suite rule to provision browsers
@@ -86,9 +92,6 @@ http_archive(
     sha256 = "e7553542cebd1113069a92d97a464a2d2aa412242926686653b8cf0101935617",
 )
 
-####################################
-# Tell Bazel about some workspaces that were installed from npm.
-
 # The @rxjs repo contains targets for building rxjs with bazel
 local_repository(
     name = "rxjs",
@@ -118,9 +121,12 @@ browser_repositories(
     firefox = True,
 )
 
-load("@build_bazel_rules_typescript//:defs.bzl", "ts_setup_workspace")
+load("@build_bazel_rules_typescript//:defs.bzl", "ts_setup_workspace", "check_rules_typescript_version")
 
 ts_setup_workspace()
+
+# 0.16.0: tsc_wrapped uses user's typescript version & check_rules_typescript_version
+check_rules_typescript_version("0.16.0")
 
 load("@io_bazel_rules_sass//sass:sass_repositories.bzl", "sass_repositories")
 
@@ -133,6 +139,10 @@ sass_repositories()
 load("@angular//:index.bzl", "ng_setup_workspace")
 
 ng_setup_workspace()
+
+load("@io_bazel_skydoc//skylark:skylark.bzl", "skydoc_repositories")
+
+skydoc_repositories()
 
 ####################################
 # Setup our local toolchain

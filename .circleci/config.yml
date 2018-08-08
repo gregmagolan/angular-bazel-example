@@ -60,7 +60,8 @@ jobs:
       - run: bazel info release
 
       # Install the dependencies from NPM
-      - run: bazel run @nodejs//:yarn install
+      # TODO(gmagolan): use `bazel run :install` once bootstrap issue resolved
+      - run: yarn
 
       # Build and Test
       # Use bazel query so that we explicitly ask for all buildable targets to
