@@ -101,12 +101,9 @@ local_repository(
 ####################################
 # Load and install our dependencies downloaded above.
 
-load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install", "check_rules_nodejs_version")
+load("@build_bazel_rules_nodejs//:defs.bzl", "node_repositories", "yarn_install")
 
 node_repositories(package_json = ["//:package.json"])
-
-# 0.11.3: proper module resolution & check_rules_nodejs_version
-check_rules_nodejs_version("0.11.3")
 
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
 

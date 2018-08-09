@@ -20,7 +20,6 @@ ng_module(
         ":hello-world.component.html",
         ":hello-world-styles",
     ],
-    tsconfig = "//src:tsconfig.json",
     deps = [
         "//src/lib",
         "@angular//packages/core",

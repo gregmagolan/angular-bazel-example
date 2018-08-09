@@ -13,7 +13,5 @@ build --symlink_prefix=dist/
 
 test --test_output=errors
 
-################################
-# Temporary Settings for Ivy   #
-################################
+# Use the Angular 6 compiler
 build --define=compile=legacy
