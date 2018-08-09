@@ -77,15 +77,29 @@ is less than two seconds, even for a large application.
 
 Control-C twice to kill the devserver and also stop `ibazel`.
 
-We can also run all the unit tests:
+## Testing
+
+We can also run all the unit and e2e tests:
 
 ```bash
 $ ibazel test ...
 ```
 
-This will run all the tests. In this example, there is a test for the
-`hello-world` component. Note that Bazel will only re-run the tests whose inputs
-changed since the last run.
+This will run all the tests.
+
+In this example, there is a unit test for the `hello-world` component which uses
+the `ts_web_test_suite` rule. There are also protractor e2e tests for both the
+`prodserver` and `devserver` which use the `protractor_web_test_suite` rule.
+
+You can also run these tests individually using,
+
+```bash
+$ bazel test //src/hello-world:test
+$ bazel test //test/e2e:prodserver_test
+$ bazel test //test/e2e:devserver_test
+```
+
+Note that Bazel will only re-run the tests whose inputs changed since the last run.
 
 ## Production
 
@@ -100,5 +114,4 @@ $ ibazel run src:prodserver
 
 ## Coming soon
 
-- Protractor bazel rule
 - Code-splitting and lazy loading (planned for Q2/Q3 2018)
