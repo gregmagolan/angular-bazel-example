@@ -140,10 +140,6 @@ load("@angular//:index.bzl", "ng_setup_workspace")
 
 ng_setup_workspace()
 
-load("@io_bazel_skydoc//skylark:skylark.bzl", "skydoc_repositories")
-
-skydoc_repositories()
-
 ####################################
 # Setup our local toolchain
 
