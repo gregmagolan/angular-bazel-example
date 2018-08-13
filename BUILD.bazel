@@ -21,73 +21,24 @@ exports_files([
     "node_modules/zone.js/dist/zone-testing-bundle.js",
 ])
 
-# NOTE: this will move to node_modules/BUILD in a later release
 filegroup(
     name = "node_modules",
-    # NB: angular & rxjs are not in this list, because we build them from sources
-    srcs = glob(["/".join([
-        "node_modules",
-        pkg,
-        "**",
-        ext,
-    ]) for pkg in [
-        "@ngrx",
-        "@types",
-        "agent-base",
-        "balanced-match",
-        "blocking-proxy",
-        "brace-expansion",
-        "browserstack",
-        "bytebuffer",
-        "concat-map",
-        "core-js",
-        "es6-promisify",
-        "fs.realpath",
-        "glob",
-        "https-proxy-agent",
-        "inflight",
-        "inherits",
-        "jasmine-core",
-        "jasmine",
-        "jasminewd2",
-        "jszip",
-        "long",
-        "minimatch",
-        "ms",
-        "once",
-        "optimist",
-        "os-tmpdir",
-        "pako",
-        "path-is-absolute",
-        "protobufjs",
-        "protractor",
-        "q",
-        "reflect-metadata",
-        "rimraf",
-        "saucelabs",
-        "sax",
-        "selenium-webdriver",
-        "source-map-support",
-        "source-map",
-        "tmp",
-        "tsickle",
-        "tslib",
-        "tsutils",
-        "typescript",
-        "webdriver-js-extender",
-        "webdriver-manager",
-        "wordwrap",
-        "wrappy",
-        "xml2js",
-        "xmlbuilder",
-        "zone.js",
-    ] for ext in [
-        "*.js",
-        "*.json",
-        "*.d.ts",
-    ]] + [
+    srcs = glob([
+        # Include only .js, .json & .d.ts files to reduce the number of
+        # files in the //:node_modules filegroup
+        "node_modules/**/*.js",
+        "node_modules/**/*.json",
+        "node_modules/**/*.d.ts",
+        # All the files in the protractor package are necesssary
         "node_modules/protractor/**",
-    ]) + ["@build_bazel_rules_typescript//:node_modules"],
+        # Also include all files in node_modules/.bin
+        "node_modules/.bin/*",
+        ],
+        exclude = [
+            # Exclude files with spaces which are illegal bazel labels
+            "node_modules/**/* *",
+        ],
+    ) + ["@build_bazel_rules_typescript//:node_modules"],
     # "@build_bazel_rules_typescript//:node_modules" is incluced
     # in `//:node_modules` so that npm dependencies that are hoisted to
     # node_modules/@bazel/typescript/node_modules because of conflicting
