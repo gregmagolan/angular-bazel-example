@@ -12,8 +12,6 @@
             "../dist/bin/src",
         ],
         "experimentalDecorators": true,
-        "types": [
-
-        ]
+        "types": []
     }
 }

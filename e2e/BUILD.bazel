@@ -5,6 +5,12 @@ ts_library(
     name = "e2e",
     testonly = 1,
     srcs = glob(["src/*.ts"]),
+    tsconfig = "//src:tsconfig-test",
+    deps = [
+      "@npm//@types/jasmine",
+      "@npm//protractor",
+      "@npm//jasmine",
+    ]
 )
 
 protractor_web_test_suite(
