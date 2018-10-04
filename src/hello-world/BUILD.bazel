@@ -25,7 +25,7 @@ ng_module(
         "@angular//packages/core",
         "@angular//packages/forms",
         "@angular//packages/router",
-        "@rxjs",
+        "@npm//@types",
     ],
 )
 
@@ -39,6 +39,8 @@ ts_library(
         "@angular//packages/core/testing",
         "@angular//packages/platform-browser",
         "@angular//packages/platform-browser-dynamic/testing",
+        "@npm//@types/jasmine",
+        "@npm//@types/node",
     ],
 )
 
