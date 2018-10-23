@@ -39,9 +39,8 @@ http_archive(
 # Rules for compiling sass
 http_archive(
     name = "io_bazel_rules_sass",
-    sha256 = "dbe9fb97d5a7833b2a733eebc78c9c1e3880f676ac8af16e58ccf2139cbcad03",
-    strip_prefix = "rules_sass-1.11.0",
-    url = "https://github.com/bazelbuild/rules_sass/archive/1.11.0.zip",
+    url = "https://github.com/bazelbuild/rules_sass/archive/1.14.1.zip",
+    strip_prefix = "rules_sass-1.14.1",
 )
 
 # This local_repository rule is needed to prevent `bazel build ...` from
