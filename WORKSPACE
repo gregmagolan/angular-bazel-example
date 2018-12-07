@@ -7,6 +7,10 @@
 # imports also make sense when referencing the published package.
 workspace(name = "angular_bazel_example")
 
+# The native http_archive rule is deprecated in Bazel 0.20.0
+# we need to load the new rule from the following package
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
 # The Bazel buildtools repo contains tools like the BUILD file formatter, buildifier
 BAZEL_BUILDTOOLS_VERSION = "49a6c199e3fbf5d94534b2771868677d3f9c6de9"
 
