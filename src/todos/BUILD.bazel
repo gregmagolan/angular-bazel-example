@@ -23,7 +23,6 @@ ng_module(
     tsconfig = "//src:tsconfig.json",
     deps = [
         "//src/lib",
-        "//src/material",
         "//src/reducers",
         "@angular//packages/common",
         "@angular//packages/core",

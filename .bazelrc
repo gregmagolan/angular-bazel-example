@@ -13,8 +13,8 @@ build --symlink_prefix=dist/
 
 test --test_output=errors
 
-# Use the Angular 6 compiler
-build --define=compile=legacy
+# Use the experimental Ivy compiler
+build --define=compile=aot
 
 # Turn off legacy external runfiles
 run --nolegacy_external_runfiles

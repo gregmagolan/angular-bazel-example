@@ -32,14 +32,6 @@ http_archive(
     sha256 = "72b0b4e517f43358f554c125e40e39f67688cd2738a8998b4a266981ed32f403",
 )
 
-# Angular material
-# Note: material v7.1.1 is compatible with angular v7.1.0 under Bazel
-http_archive(
-    name = "angular_material",
-    url = "https://github.com/angular/material2/archive/7.1.1.zip",
-    strip_prefix = "material2-7.1.1",
-)
-
 # Rules for compiling sass
 http_archive(
     name = "io_bazel_rules_sass",
@@ -77,7 +69,6 @@ yarn_install(
     name = "npm",
     package_json = "//:package.json",
     yarn_lock = "//:yarn.lock",
-    data = ["//:postinstall.tsconfig.json"],
 )
 
 load("@io_bazel_rules_go//go:def.bzl", "go_rules_dependencies", "go_register_toolchains")
@@ -104,7 +95,3 @@ sass_repositories()
 load("@angular//:index.bzl", "ng_setup_workspace")
 
 ng_setup_workspace()
-
-load("@angular_material//:index.bzl", "angular_material_setup_workspace")
-
-angular_material_setup_workspace()
