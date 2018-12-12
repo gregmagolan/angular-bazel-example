@@ -37,6 +37,12 @@ http_archive(
 )
 
 # Angular material
+# NOTE: using a `7.1.1-compat-ng-7.1.3` branch of material2 on a fork here
+# since Angular and rules_typescript version under Bazel checking is too strict
+# at the moment.
+# https://github.com/gregmagolan/material2/commit/e2090864cddf926445eefd39c7e90eada107013d
+# TODO(gregmagolan): update the next release of material that is compatible with
+#   Angular 7.1.3 under Bazel
 http_archive(
     name = "angular_material",
     url = "https://github.com/gregmagolan/material2/archive/7.1.1-compat-ng-7.1.3.zip",
