@@ -24,8 +24,8 @@ http_archive(
 # The @angular repo contains rule for building Angular applications
 http_archive(
     name = "angular",
-    url = "https://github.com/angular/angular/archive/7.1.0.zip",
-    strip_prefix = "angular-7.1.0",
+    url = "https://github.com/angular/angular/archive/7.1.3.zip",
+    strip_prefix = "angular-7.1.3",
 )
 
 # The @rxjs repo contains targets for building rxjs with bazel
@@ -37,11 +37,10 @@ http_archive(
 )
 
 # Angular material
-# Note: material v7.1.1 is compatible with angular v7.1.0 under Bazel
 http_archive(
     name = "angular_material",
-    url = "https://github.com/angular/material2/archive/7.1.1.zip",
-    strip_prefix = "material2-7.1.1",
+    url = "https://github.com/gregmagolan/material2/archive/7.1.1-compat-ng-7.1.3.zip",
+    strip_prefix = "material2-7.1.1-compat-ng-7.1.3",
 )
 
 # Rules for compiling sass
