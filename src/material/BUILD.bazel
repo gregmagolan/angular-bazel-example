@@ -1,4 +1,4 @@
-load("@angular//:index.bzl", "ng_module")
+load("@npm_angular_bazel//:index.bzl", "ng_module")
 
 package(default_visibility = ["//visibility:public"])
 
@@ -7,7 +7,9 @@ ng_module(
     srcs = glob(["*.ts"]),
     tsconfig = "//src:tsconfig.json",
     deps = [
-        "@angular//packages/core",
-        "@angular_material//src/lib:material",
+        "@npm//@angular/core",
+        "@npm//@angular/forms",
+        "@npm//@angular/material",
+        "@npm//@angular/platform-browser",
     ],
 )
