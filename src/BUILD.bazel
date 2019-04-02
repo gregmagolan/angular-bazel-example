@@ -121,6 +121,10 @@ ts_devserver(
         "@npm//node_modules/@angular/material:list/typings/index.ngfactory.js",
         "@npm//node_modules/@angular/material:sidenav/typings/index.ngfactory.js",
         "@npm//node_modules/@angular/material:toolbar/typings/index.ngfactory.js",
+        # We are manaully adding a browserify generated named UMD date-fns bundle here that
+        # was generated in our package.json postinstall step. This is a temporary work-around
+        # to get commonjs modules & npm packages working with ts_devserver. A more ergonomic
+        # solution is planned for Angular v8. See https://github.com/bazelbuild/rules_nodejs/issues/646.
         "@npm//node_modules/date-fns:date-fns.umd.js",
     ],
     # Serve these files in addition to the JavaScript bundle
