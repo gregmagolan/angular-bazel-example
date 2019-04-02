@@ -34,6 +34,7 @@ ng_module(
         "@npm//@angular/core",
         "@npm//@angular/forms",
         "@npm//@angular/router",
+        "@npm//date-fns",
     ],
 )
 
@@ -118,6 +119,7 @@ ts_web_test_suite(
         "@npm//node_modules/@angular/router:bundles/router.umd.js",
         "@npm//node_modules/@angular/router:router.ngfactory.js",
         "@npm//node_modules/@angular/router:router.ngsummary.js",
+        "@npm//node_modules/date-fns:date-fns.umd.js",
         "@npm//node_modules/tslib:tslib.js",
     ],
     # do not sort
