@@ -122,6 +122,7 @@ ts_web_test_suite(
     deps = [
         ":test_lib",
         "//src:rxjs_umd_modules",
+        "@npm//@angular/compiler",
     ],
 )
         `);
