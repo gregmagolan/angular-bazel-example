@@ -68,8 +68,8 @@ jobs:
       - run: yarn
 
       # Build and Test
-      - run: yarn ng test
-      - run: yarn ng e2e
+      - run: yarn test
+      - run: yarn e2e
 
       - store_artifacts:
           path: dist/bin/src/bundle.min.js
