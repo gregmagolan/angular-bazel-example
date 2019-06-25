@@ -163,6 +163,7 @@ rollup_bundle(
         "@npm//@angular/material",
         "@npm//@angular/platform-browser",
         "@npm//@angular/router",
+        "@npm//@auth0/angular-jwt",
         "@npm//@ngrx/store",
         "@npm//rxjs",
     ],

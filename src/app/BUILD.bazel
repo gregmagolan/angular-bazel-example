@@ -38,6 +38,7 @@ ng_module(
         "@npm//@angular/core",
         "@npm//@angular/router",
         "@npm//@angular/platform-browser",
+        "@npm//@auth0/angular-jwt",
         "@npm//@ngrx/store",
     ],
 )
