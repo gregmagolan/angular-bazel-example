@@ -1,4 +1,5 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {FormsModule} from '@angular/forms';
 import {By} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -14,7 +15,7 @@ describe('BannerComponent (inline template)', () => {
     TestBed.configureTestingModule({
       declarations: [HelloWorldComponent],  // declare the test component
       aotSummaries: HelloWorldModuleNgSummary,
-      imports: [BrowserAnimationsModule],
+      imports: [BrowserAnimationsModule, FormsModule],
     });
     TestBed.compileComponents();
   }));
