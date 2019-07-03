@@ -4,6 +4,6 @@
 // it can load the approriate script from the server for the
 // external instead of having that script included in the bundle.
 //
-// For example, we configure RequireJS to load /store.umd.min.js
+// For example, we configure RequireJS to load /store.umd.js
 // from the server when it encounters require('@ngrx/store').
-require.config({paths: {'@ngrx/store': 'store.umd.min'}});
+require.config({paths: {'@ngrx/store': 'store.umd'}});

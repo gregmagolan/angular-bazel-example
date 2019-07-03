@@ -103,7 +103,7 @@ ts_devserver(
     # loader to load them.
     data = [
         "//src/assets",
-        "@npm//:node_modules/@ngrx/store/bundles/store.umd.min.js",
+        "@npm//:node_modules/@ngrx/store/bundles/store.umd.js",
     ],
     # Start from the development version of the main
     entry_module = "angular_bazel_example/src/main.dev",
