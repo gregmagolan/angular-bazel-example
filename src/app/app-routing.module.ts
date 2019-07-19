@@ -18,11 +18,12 @@ const routes: Routes = [
     loadChildren: () =>
         import('./hello-world/hello-world.module.ngfactory').then(m => m.HelloWorldModuleNgFactory)
   },
-  {
-    path: 'todos',
-    pathMatch: 'full',
-    loadChildren: () => import('./todos/todos.module.ngfactory').then(m => m.TodosModuleNgFactory)
-  },
+  // {
+  //   path: 'todos',
+  //   pathMatch: 'full',
+  //   loadChildren: () => import('./todos/todos.module.ngfactory').then(m =>
+  //   m.TodosModuleNgFactory)
+  // },
   {
     path: 'billing',
     pathMatch: 'full',

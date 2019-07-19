@@ -33,11 +33,10 @@ ng_module(
     deps = NG_FACTORY_ADDED_IMPORTS + GENERATED_FEATURES + [
         "//src/app/hello-world",
         "//src/app/home",
-        "//src/app/todos",
+        # "//src/app/todos",
         "//src/shared/material",
         "@npm//@angular/core",
         "@npm//@angular/router",
         "@npm//@angular/platform-browser",
-        "@npm//@ngrx/store",
     ],
 )

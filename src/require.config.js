@@ -6,4 +6,4 @@
 //
 // For example, we configure RequireJS to load /store.umd.js
 // from the server when it encounters require('@ngrx/store').
-require.config({paths: {'@ngrx/store': 'store.umd'}});
+// require.config({paths: {'@ngrx/store': 'store.umd'}});
